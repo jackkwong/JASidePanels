@@ -42,6 +42,7 @@ static char ja_kvoContext;
 @property (nonatomic, strong) UIView *rightPanelContainer;
 @property (nonatomic, strong) UIView *centerPanelContainer;
 
+
 @end
 
 @implementation JASidePanelController
@@ -74,7 +75,6 @@ static char ja_kvoContext;
 @synthesize bounceOnSidePanelOpen = _bounceOnSidePanelOpen;
 @synthesize bounceOnSidePanelClose = _bounceOnSidePanelClose;
 @synthesize bounceOnCenterPanelChange = _bounceOnCenterPanelChange;
-@synthesize visiblePanel = _visiblePanel;
 @synthesize shouldDelegateAutorotateToVisiblePanel = _shouldDelegateAutorotateToVisiblePanel;
 @synthesize centerPanelHidden = _centerPanelHidden;
 @synthesize allowLeftSwipe = _allowLeftSwipe;
@@ -203,7 +203,7 @@ static char ja_kvoContext;
 }
 
 - (BOOL)shouldAutorotateToInterfaceOrientation:(UIInterfaceOrientation)toInterfaceOrientation {
-    __strong UIViewController *visiblePanel = self.visiblePanel;
+    UIViewController *visiblePanel = self.visiblePanel;
 
     if (self.shouldDelegateAutorotateToVisiblePanel) {
         return [visiblePanel shouldAutorotateToInterfaceOrientation:toInterfaceOrientation];
@@ -215,7 +215,7 @@ static char ja_kvoContext;
 #else
 
 - (BOOL)shouldAutorotate {
-    __strong UIViewController *visiblePanel = self.visiblePanel;
+    UIViewController *visiblePanel = self.visiblePanel;
 
     if (self.shouldDelegateAutorotateToVisiblePanel && [visiblePanel respondsToSelector:@selector(shouldAutorotate)]) {
         return [visiblePanel shouldAutorotate];
