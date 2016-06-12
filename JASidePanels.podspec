@@ -7,6 +7,7 @@ Pod::Spec.new do |s|
   s.author       =  { 'Jesse Andersen' => 'gotosleep@gmail.com' }
   s.source       =  { :git => 'https://github.com/db42/JASidePanels.git', :commit => '7292369745bad2a78307a8e20cec1bddd31d4fb5' }
   s.platform     =  :ios
+  s.ios.deployment_target = '8.0'
   s.source_files =  'JASidePanels/Source/*'
   s.framework    =  'QuartzCore'
   s.requires_arc =  true
